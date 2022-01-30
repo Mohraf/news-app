@@ -2,7 +2,7 @@ from distutils.command.config import config
 from flask import Flask
 
 #Initialize the application
-app = Flask(__name__, instance_relative_config=True
+app = Flask(__name__, instance_relative_config=True)
 
 # Set up configuration
 # app.config.from_object(DevConfig)
