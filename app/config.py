@@ -8,3 +8,13 @@ class Config:
   General configuration parent class
   '''
   NEWS_API_BASE_URL = 'https://newsapi.org/v2/'
+
+
+class DevConfig(Config):
+  '''
+  Development configuration child class
+  
+  Args:
+    Config: The Parent configuration class with general config settings
+  '''
+  DEBUG = True
