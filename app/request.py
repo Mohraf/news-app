@@ -17,12 +17,6 @@ base_url = app.config['NEWS_API_BASE_URL']
 def get_news_sources(source):
   get_news_url = base_url.format(source, api_key)
 
-  # response = (requests.get(get_news_url)).json()
-
-  # if response['sources']:
-  #   news_sources_list = response['sources']
-  #   sources_results = process_sources_results(news_sources_list)
-
   # return sources_results
   with urllib.request.urlopen(get_news_url) as url:
     get_sources_data = url.read()
