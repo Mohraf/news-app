@@ -12,6 +12,7 @@ NewsSource = news_source.NewsSource
 
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config['NEWS_API_BASE_URL']
+articles_url = app.config['ARTICLES_API_BASE_URL']
 
 
 def get_news_sources(source):
@@ -53,3 +54,38 @@ def process_sources_results(news_list):
       news_sources_results.append(source_object)
   
   return news_sources_results
+
+
+def get_news_articles():
+  get_news_articles_url = articles_url.format(api_key)
+
+  # return articles_results
+  with urllib.request.urlopen(get_news_articles_url) as url:
+    get_articles_data = url.read()
+    get_articles_response = json.loads(get_articles_data)
+
+    articles_results = None
+
+    if get_articles_response['articles']:
+      articles_results_list = get_articles_response['articles']
+      articles_results = process_sources_results(articles_results_list)
+  
+  return articles_results
+
+
+def process_sources_results(articles_list):
+  news_articles_results = []
+  for articles_item in articles_list:
+    author = articles_item.get('author')
+    title = articles_item.get('title')
+    description = articles_item.get('description')
+    url = articles_item.get('url')
+    urlToImage = articles_item.get('urlToImage')
+    publishedAt = articles_item.get('publishedAt')
+    content = articles_item.get('content')
+
+    if id:
+      article_object = NewsArticle(author,title,description,url,urlToImage,publishedAt,content)
+      news_articles_results.append(article_object)
+  
+  return news_articles_results
