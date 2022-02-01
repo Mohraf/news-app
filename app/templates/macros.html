@@ -3,8 +3,10 @@
     {% for source in source_list %}
         <div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 list-group">
             <div class="list-group-item">
-                <a href="{{source.url}}">
-                    {{ source.name|truncate(20)}}</a>
+                <a href="{{source.url}}">{{source.url}}</a>
+                <p>
+                    {{source.name}}
+                </p>
             </div>
         </div>
     {% endfor %}
@@ -19,6 +21,9 @@
                 <p class="text-center">
                     <a href="{{article.url}}">
                         {{ article.title }}</a>
+                </p>
+                <p>
+                    {{article.publishedAt}}
                 </p>
             </div>
         {% endfor %}
