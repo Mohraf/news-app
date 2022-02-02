@@ -22,6 +22,8 @@ python3 run.py
 No live link at the moment (console application)
 ## Technologies Used
 * Python
+* NewsAPI (https://newsapi.org/)
+* Flask
 ## Support and contact details
 amosokello04@gmail.com
 ### License
