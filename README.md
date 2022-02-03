@@ -19,7 +19,7 @@ pip install -r requirements.txt
 python3 run.py
 ```
 ## Live link
-No live link at the moment (console application)
+https://intense-sea-08315.herokuapp.com/
 ## Technologies Used
 * Python
 * NewsAPI (https://newsapi.org/)
