@@ -1,10 +1,9 @@
-from email import message
-from flask import render_template
-from app import app
-from .request import get_news_sources, get_news_articles
+from flask import render_template, request, redirect, url_for
+from . import main
+from ..request import get_news_sources, get_news_articles
 
 #Views
-@app.route('/')
+@main.route('/')
 def index():
   '''
   View root page that returns the index page and its data
@@ -14,7 +13,7 @@ def index():
   return render_template('index.html', title = title, sources = sources)
 
 
-@app.route('/articles')
+@main.route('/articles')
 def articles():
   articles = get_news_articles()
   title = 'Home - Welcome to The best News Website Online'
