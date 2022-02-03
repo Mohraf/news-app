@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 * Run the application using the following command
 ```
-python3 run.py
+python3 manage.py server
 ```
 ## Live link
 https://intense-sea-08315.herokuapp.com/
